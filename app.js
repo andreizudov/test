@@ -3,7 +3,7 @@ const expressHbs = require('express-handlebars')
 const hbs = require('hbs')
 const app = express()
 
-app.set('view engine', 'hbs')
+
 hbs.registerPartials(__dirname + "/views/partials")
 
 app.engine("hbs", expressHbs({
@@ -13,10 +13,13 @@ app.engine("hbs", expressHbs({
 })
 )
 
-hbs.registerHelper ("css", function(){
-  let ar = "Привет"
-  return "Скажу тебе" + ar})
+hbs.registerHelper('createStringList', function() {
+  var result = 'Привет'
 
+  return new hbs.SafeString('Скажу тебе' + result )
+})
+
+app.set('view engine', 'hbs')
 
 app.use('/', function(request, response) {
   response.render('home.hbs')
