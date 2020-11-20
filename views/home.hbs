@@ -1,3 +1,18 @@
- <h1>Главная страница</h1>
+ <h1 onclick="menuRegistration()">Главная страница</h1>
+ <script src="script\menuRegistration.js"> </script>
+ <script src="script\registrationPlayer.js"> </script>
+ <script src="script\addNewPlayer.js"> </script>
+ <script src="script\squadTeam.js"> </script>
+ 
 
-<div> {{createStringList}} </div>
+<div id="menuRegistration"> 
+    <form id="menuReg"> 
+        Введите Имя <input value="Иван" class="regPlayer" id="name"> <p> 
+        Введите Фамилию <input value="Иванов" class="regPlayer" id="surname"><p>
+        Ввведите почту <input value="example@mail.ru" class="regPlayer" id="email"> <p>
+        Введите пароль <input type="password" id="password" class="regPlayer"> <p>
+        Повторите пароль <input type="password" id="checkPassword" class="regPlayer">
+        </form> 
+        <input type="button" value="Зарегистрироваться" onclick="addNewPlayer(), squad()">
+        </div>
+
